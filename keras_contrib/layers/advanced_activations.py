@@ -45,7 +45,8 @@ class RReLU(Layer):
         config = {'l': self.l, 'u': self.u}
         base_config = super(RReLU, self).get_config()
         return dict(list(base_config.items()) + list(config.items()))
-
+    
+get_custom_objects().update({'RReLU': RReLU})
 
 class PELU(Layer):
     """Parametric Exponential Linear Unit.
